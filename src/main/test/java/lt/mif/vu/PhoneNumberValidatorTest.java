@@ -17,7 +17,7 @@ public class PhoneNumberValidatorTest {
     @Test
     public void normalizesPhoneNumber() {
         String phoneNumber = "862587458";
-        phoneNumberValidator.normalizePhoneNumber(phoneNumber);
+        phoneNumberValidator.validate(phoneNumber);
         assertEquals("+37062587458", phoneNumber);
     }
 

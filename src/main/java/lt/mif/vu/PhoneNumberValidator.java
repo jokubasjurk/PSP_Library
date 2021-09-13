@@ -23,7 +23,7 @@ public class PhoneNumberValidator implements IPhoneNumberValidator {
 
     }
 
-    public void normalizePhoneNumber(String phoneNumber) {
+    private void normalizePhoneNumber(String phoneNumber) {
 
     }
 
