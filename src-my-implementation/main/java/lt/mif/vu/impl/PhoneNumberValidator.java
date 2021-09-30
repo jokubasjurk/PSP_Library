@@ -2,17 +2,32 @@ package lt.mif.vu.impl;
 
 public class PhoneNumberValidator {
 
-    private final String countryCode;
-    private final String areaCode;
-    private final int length;
+    private static final String LT_COUNTRY_CODE = "+370";
+    private static final String LT_AREA_CODE = "8";
+    private static final int LT_PHONE_LENGTH = 11;
+    private String countryCode;
+    private String areaCode;
+    private int length;
 
     public PhoneNumberValidator() {
-        this("+370", "8", 11);
+        this(LT_COUNTRY_CODE, LT_AREA_CODE, LT_PHONE_LENGTH);
     }
 
     public PhoneNumberValidator(String countryCode, String areaCode, int length) {
         this.countryCode = countryCode;
         this.areaCode = areaCode;
+        this.length = length;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
+
+    public void setAreaCode(String areaCode) {
+        this.areaCode = areaCode;
+    }
+
+    public void setLength(int length) {
         this.length = length;
     }
 
@@ -25,11 +40,10 @@ public class PhoneNumberValidator {
     }
 
     private boolean isValidLength(String convertedNumber) {
-        String tempNumber = convertedNumber;
         if (convertedNumber.contains("+")) {
-            tempNumber = convertedNumber.substring(1);
+            convertedNumber = convertedNumber.substring(1);
         }
-        return tempNumber.length() == length;
+        return convertedNumber.length() == length;
     }
 
     public boolean containsOnlyDigits(String phoneNumber) {

@@ -6,13 +6,17 @@ import static lt.mif.vu.impl.constants.Constants.DEFAULT_SPECIAL_CHARACTERS;
 
 public class PasswordChecker {
 
-    private final List<Character> specialCharacters;
+    private List<Character> specialCharacters;
 
     public PasswordChecker() {
         this.specialCharacters = DEFAULT_SPECIAL_CHARACTERS;
     }
 
     public PasswordChecker(List<Character> specialCharacters) {
+        this.specialCharacters = specialCharacters;
+    }
+
+    public void setSpecialCharacters(List<Character> specialCharacters) {
         this.specialCharacters = specialCharacters;
     }
 
